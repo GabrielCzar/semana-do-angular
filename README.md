@@ -4,5 +4,6 @@
 	- ng new nome_project
 	- ng serve
 	- ng generate component nome_component
-	t
+	- ng new nome_project --style=sass
+	- 
 
