@@ -1,0 +1,11 @@
+ul li {
+    list-style-type: none;
+}
+
+.maior_idade {
+    color: green;
+}
+
+.escondido {
+    display: none;
+}
