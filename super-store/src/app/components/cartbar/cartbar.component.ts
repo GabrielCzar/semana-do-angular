@@ -12,4 +12,8 @@ export class CartbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  clear () {
+    // limpar carrinho
+  }
+
 }

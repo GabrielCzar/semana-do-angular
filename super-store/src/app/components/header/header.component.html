@@ -1,3 +1,20 @@
-<p>
-  header works!
-</p>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <div class="navbar-burger burger" data-target="navMenuExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <app-logo></app-logo>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <a class='navbar-item' (click)='showSearch()'>
+        <i class="fa fa-search"></i>
+      </a>
+
+      <app-cartbar></app-cartbar>
+    </div>
+  </div>
+</nav>
