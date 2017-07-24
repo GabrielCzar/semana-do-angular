@@ -1,20 +1,21 @@
-<nav class="navbar">
-  <div class="navbar-brand">
-    <div class="navbar-burger burger" (click)='menu.open()'>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+<app-searchbar [ngClass]="{'is-hidden' : !modal}" (closeSearch)="hideSearch()"></app-searchbar>
 
-    <app-logo></app-logo> 
+<nav class="nav animated slideInDown">
+  <div class="nav-left">
+    <span class="nav-toggle" (click)="menu.open()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+
+    <app-logo></app-logo>
   </div>
-  <div class='navbar-menu'>
-    <div class='navbar-end'>
-      <a class='navbar-item'>
-        <i class='fa fa-search'></i>
-      </a>
 
-      <app-cartbar></app-cartbar>
-    </div>
+  <div class="nav-right">
+    <a class="nav-item" (click)="showSearch()">
+      <i class="fa fa-search"></i>
+    </a>
+
+    <app-cartbar></app-cartbar>
   </div>
 </nav>

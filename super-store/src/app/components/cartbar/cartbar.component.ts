@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from "app/providers/cart.service";
 
 @Component({
   selector: 'app-cartbar',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cart: CartService) { }
 
   ngOnInit() {
   }
 
-  clear () {
-    // limpar carrinho
-  }
 
+  clear() {
+    console.info('esvaziando carrinho..');
+    this.cart.clear();
+  }
 }

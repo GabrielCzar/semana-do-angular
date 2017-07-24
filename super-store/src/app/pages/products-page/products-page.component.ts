@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from "app/providers/menu.service";
 
 @Component({
   selector: 'app-products-page',
   templateUrl: './products-page.component.html',
   styleUrls: ['./products-page.component.sass']
 })
+
 export class ProductsPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public menu: MenuService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  closeMenu() { this.menu.close() }
 }

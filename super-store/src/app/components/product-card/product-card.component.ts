@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ProductsService } from "app/providers/products.service";
+import { CartService } from "app/providers/cart.service";
 
 @Component({
   selector: 'app-product-card',
@@ -8,9 +10,20 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductCardComponent implements OnInit {
   @Input() product : any = {}
   @Input() view : boolean = false;
+  
+  constructor(public products: ProductsService, public cart: CartService) {}
 
-  constructor () {}
+  ngOnInit() {
+    setTimeout(() => {
+      this.products.scrollTop();
+    }, 0)
 
-  ngOnInit () {}
+  }
+  
+  addToCart(item: any) {
+    this.cart.add(item).then(() => { 
+      console.info(item.name + ' adicionado/atualizado no carrinho');
+    }).catch(console.warn)
+  }
 
 }
