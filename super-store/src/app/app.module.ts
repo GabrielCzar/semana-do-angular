@@ -18,6 +18,9 @@ import { Error404PageComponent } from './pages/error-404-page/error-404-page.com
 
 import { RoutingModule } from "app/app.routers";
 
+import { MenuService } from "app/providers/menu.service";
+import { ProductsService } from "app/providers/products.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,7 @@ import { RoutingModule } from "app/app.routers";
     BrowserModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [MenuService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
