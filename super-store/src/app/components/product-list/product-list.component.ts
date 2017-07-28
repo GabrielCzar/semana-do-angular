@@ -13,7 +13,7 @@ export class ProductListComponent implements OnInit {
   constructor(public products : ProductsService) { }
 
   ngOnInit() {
-    this.products.getAllProducts().then((products: any[]) => {
+    this.products.listar().then((products: any[]) => {
       setTimeout(() => {
         this.items = products;
         this.loading = false;

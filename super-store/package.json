@@ -8,8 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "tsc": "tsc",
     "e2e": "ng e2e",
-    "build:prod" : "ng build --prod --aot"
+    "build:prod": "ng build --prod --aot && node workbox-build.js",
+    "deploy:ghp": "npm run build:prod && cd dist && cp index.html 404.html && git init && git add . && git commit -m 'deploy' && git remote add origin https://github.com/user-deploy/repositorio-deploy.github.io && git push origin master --force"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +51,7 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "typescript": "~2.3.3",
+    "workbox-build": "^1.1.0"
   }
 }
